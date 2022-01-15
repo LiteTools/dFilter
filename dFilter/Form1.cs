@@ -18,16 +18,18 @@ namespace dFilter
             InitializeComponent();
         }
 
+
+       public static string directory;
         private void button1_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "All|*.*" })
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
             {
-                string selDirectory = ofd.FileName;
-                string directory = ofd.FileName;
+
+                 directory = fbd.SelectedPath;
 
 
 
-                if (ofd.ShowDialog() == DialogResult.OK)
+                if (fbd.ShowDialog() == DialogResult.OK)
                 {
                   //  foreach()
                   //  {
