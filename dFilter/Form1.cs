@@ -19,32 +19,27 @@ namespace dFilter
         }
 
 
-       public static string directory;
+        public static string directory;
         private void button1_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
             {
-
-                 directory = fbd.SelectedPath;
-
-
-
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-                  //  foreach()
-                  //  {
-                        try
-                        {
+                    //  foreach()
+                    //  {
+                    try
+                    {
+                        directory = fbd.SelectedPath;
                         textBox1.Text = directory;
-                         }
-                        catch
-                        {
-
-                        }
                     }
-                
+                    catch
+                    {
+                        MessageBox.Show("There was an error.");
+                    }
                 }
             }
         }
     }
+}
 //}
