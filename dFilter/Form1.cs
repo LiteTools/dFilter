@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,24 +23,23 @@ namespace dFilter
         public static string directory;
         private void button1_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            string directory = "";
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+
+            if (fbd.ShowDialog() == DialogResult.OK)
             {
-                if (fbd.ShowDialog() == DialogResult.OK)
+                directory = fbd.SelectedPath;
+                textBox1.Text = directory;
+                var filesEx = Directory.GetFiles(directory, "*.*", SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".exe"));
+
+                foreach (FileInfo FilesE in filesEx)
                 {
-                    //  foreach()
-                    //  {
-                    try
-                    {
-                        directory = fbd.SelectedPath;
-                        textBox1.Text = directory;
-                    }
-                    catch
-                    {
-                        MessageBox.Show("There was an error.");
-                    }
+                    string PathDir = FilesE.FullName;
+                    listView1.Items.Add(PathDir + Environment.NewLine);
                 }
+
+                Directory.GetFiles(directory);
             }
         }
     }
 }
-//}
