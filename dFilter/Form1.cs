@@ -19,7 +19,6 @@ namespace dFilter
             InitializeComponent();
         }
 
-
         public static string directory;
         private void button1_Click(object sender, EventArgs e)
         {
@@ -39,5 +38,24 @@ namespace dFilter
                 }
             }
         }
+        
+        public static void CreateFileMover()
+        {
+            string desktopDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\dFilter\\";
+            // This creates a folder on the desktop to move all of the detected files into.
+            
+            if(Directory.Exists(desktopDir))
+            {
+                 MessageBox.Show("Unable to create a folder on the desktop since it already exists.");
+            }
+            else
+            {
+                 Directory.CreateDirectory(desktopDir);
+            }
+            
+           
+        }
+
+        
     }
 }
