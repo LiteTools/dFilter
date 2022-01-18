@@ -44,9 +44,9 @@ namespace dFilter
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(424, 20);
+            this.label1.Size = new System.Drawing.Size(423, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Select which directory you want to clean setup.exe / installers from.";
+            this.label1.Text = "Select which directory you want to clean installer executables from.";
             // 
             // button1
             // 
@@ -74,9 +74,10 @@ namespace dFilter
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 102);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(269, 187);
+            this.listView1.Size = new System.Drawing.Size(406, 187);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // Form1
             // 
