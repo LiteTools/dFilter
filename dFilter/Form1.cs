@@ -47,8 +47,8 @@ namespace dFilter {
 
     public static void DeleteFiles() {
       try {
-        Directory.Delete(desktopDir);
-        MessageBox.Show("The files inside of the dFilter output have been deleted.");
+        Directory.Delete(desktopDir); // this code errors, will fix later.
+        MessageBox.Show("The files inside of the dFilter output folder have been deleted.");
       } catch {
         MessageBox.Show("An error occurred.");
       }
