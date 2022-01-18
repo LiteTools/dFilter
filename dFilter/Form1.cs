@@ -37,8 +37,6 @@ namespace dFilter
                     string PathDir = FilesE.FullName;
                     listView1.Items.Add(PathDir + Environment.NewLine);
                 }
-
-                Directory.GetFiles(directory);
             }
         }
     }
