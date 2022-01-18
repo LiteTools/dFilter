@@ -53,9 +53,13 @@ namespace dFilter
                  Directory.CreateDirectory(desktopDir);
             }
             
-           
+          
         }
 
+    public static void DeleteFiles()
+    {
+     // Todo: Merge the file modules into its own class called FileUtils
+    }
         
     }
 }
