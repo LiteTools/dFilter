@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -41,8 +42,17 @@ namespace dFilter
                     if (FilesE.Contains(keywords))
                     {
                         listView1.Items.Add(FilesE + Environment.NewLine);
-
+                        try
+                        {
+                            File.Move(FilesE, desktopDir + Path.GetFileName(FilesE));
+                        }
+                        catch(Exception ex)
+                        {
+                            Debug.Print("Unable to move. " + ex.Message);
+                        }
+                       
                     }
+                 
                 }
        
 
@@ -52,8 +62,6 @@ namespace dFilter
         public static string desktopDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\dFilter\\";
         public static void CreateFileMover()
         {
-
-
             if (Directory.Exists(desktopDir))
             {
                 MessageBox.Show("Unable to create a folder on the desktop since it already exists.");
@@ -69,7 +77,7 @@ namespace dFilter
         {
             try
             {
-                Directory.Delete(desktopDir); // this code errors, will fix later.
+                Directory.Delete(desktopDir);
                 MessageBox.Show("The files inside of the dFilter output folder have been deleted.");
             }
             catch
