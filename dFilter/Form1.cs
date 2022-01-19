@@ -65,6 +65,7 @@ namespace dFilter
             if (Directory.Exists(desktopDir))
             {
                 MessageBox.Show("Unable to create a folder on the desktop since it already exists.");
+                ErrorLogging(1);
             }
             else
             {
@@ -83,6 +84,25 @@ namespace dFilter
             catch
             {
                 MessageBox.Show("An error occurred.");
+            }
+
+        }
+
+
+        public static void ErrorLogging(int errorcode)
+        {
+            switch(errorcode)
+            {
+                case 1:
+                Debug.Print("The dFilter folder already exists on your desktop.");
+                break;
+
+                case 2:
+                Debug.Print("dFilter was unable to move all the install files into the dFilter folder.");
+                break;
+
+                case 3:
+                Debug.Print("dFilter.");
             }
 
         }
