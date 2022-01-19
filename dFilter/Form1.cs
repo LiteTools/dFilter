@@ -31,7 +31,7 @@ namespace dFilter
             if (fbd.ShowDialog() == DialogResult.OK)
             {
                 string keywords = "setup";
-                string[] keywordnew = { "setup", "installer", "install" };
+                string[] keywordnew = { "setup", "installer", "install", "installation", "download" };
 
                 directory = fbd.SelectedPath;
                 textBox1.Text = directory;
@@ -48,7 +48,7 @@ namespace dFilter
                         }
                         catch(Exception ex)
                         {
-                            Debug.Print("Unable to move. " + ex.Message);
+                            Debug.Print("Unable to move files. " + ex.Message);
                         }
                        
                     }
