@@ -37,6 +37,7 @@ namespace dFilter
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +65,7 @@ namespace dFilter
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 73);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 23);
+            this.textBox1.Size = new System.Drawing.Size(282, 23);
             this.textBox1.TabIndex = 2;
             // 
             // openFileDialog1
@@ -73,10 +74,10 @@ namespace dFilter
             // 
             // listView1
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 102);
+            this.listView1.FullRowSelect = true;
+            this.listView1.Location = new System.Drawing.Point(12, 107);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(406, 187);
+            this.listView1.Size = new System.Drawing.Size(406, 182);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
@@ -88,7 +89,7 @@ namespace dFilter
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 4;
-            this.label2.Text = "v1.0.0";
+            this.label2.Text = "v0.1.0";
             // 
             // button2
             // 
@@ -101,11 +102,23 @@ namespace dFilter
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(12, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(199, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "dFilter supports .exe and .msi filtering.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 301);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listView1);
@@ -129,6 +142,7 @@ namespace dFilter
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

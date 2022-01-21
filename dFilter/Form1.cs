@@ -89,7 +89,7 @@ namespace dFilter
             try
             {
                 Directory.Delete(desktopDir);
-                MessageBox.Show("The files inside of the dFilter output folder have been deleted.");
+                MessageBox.Show("The files inside of the dFilter output folder have been deleted.", "dFilter");
             }
             catch
             {
@@ -101,6 +101,7 @@ namespace dFilter
         private void button2_Click(object sender, EventArgs e)
         {
             CreateFileMover();
+            MessageBox.Show("This feature is coming soon in the full release!");
 
         }
     }

@@ -4,6 +4,9 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <Version>0.1.0</Version>
+    <Company>LiteTools</Company>
+    <Authors>Matty</Authors>
   </PropertyGroup>
 
 </Project>
