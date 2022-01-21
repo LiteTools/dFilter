@@ -24,7 +24,7 @@ namespace dFilter
         public static string directory;
         private void button1_Click(object sender, EventArgs e)
         {
-            CreateFileMover();
+
             string directory = "";
             FolderBrowserDialog fbd = new FolderBrowserDialog();
 
@@ -100,7 +100,7 @@ namespace dFilter
 
         private void button2_Click(object sender, EventArgs e)
         {
-         
+            CreateFileMover();
 
         }
     }
