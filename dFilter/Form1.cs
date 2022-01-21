@@ -43,15 +43,8 @@ namespace dFilter
                     {
                         listView1.Items.Add(FilesE + Environment.NewLine);
                         // Will add a new button for this.
-                        try
-                        {
-                            File.Move(FilesE, desktopDir + Path.GetFileName(FilesE));
-                        }
-                        catch(Exception ex)
-                        {
-                            Debug.Print("Unable to move files. " + ex.Message);
-                        }
-                       
+                        button2.Visible = true;
+                     
                     }
                  
                 }
@@ -86,6 +79,17 @@ namespace dFilter
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                File.Move(FilesE, desktopDir + Path.GetFileName(FilesE));
+            }
+            catch (Exception ex)
+            {
+                Debug.Print("Unable to move files. " + ex.Message);
+            }
 
+        }
     }
 }
