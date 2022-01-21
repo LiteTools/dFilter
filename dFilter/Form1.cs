@@ -30,8 +30,17 @@ namespace dFilter
 
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                string keywords = "setup";
+                string keywordDebug = "setup";
+                
                 string[] keywordnew = { "setup", "installer", "install", "installation", "download", "downloader", "set-up" };
+                // experimental and testing stuff START
+                 List<string> allKeywords = new List<string>();
+
+                     foreach (string keys in keywordnew)
+                    {
+                        allKeywords.Add(new string(keywords));
+                    }
+                    // experimental and testing stuff END
 
                 directory = fbd.SelectedPath;
                 textBox1.Text = directory;
@@ -39,9 +48,10 @@ namespace dFilter
 
                 foreach (string FilesE in filesEx)
                 {
-                    if (FilesE.Contains(keywords))
+                    if (FilesE.Contains(keywordDebug))
                     {
                         listView1.Items.Add(FilesE + Environment.NewLine);
+
                         // Will add a new button for this.
                         button2.Visible = true;
                      
