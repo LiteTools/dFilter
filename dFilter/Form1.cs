@@ -30,32 +30,28 @@ namespace dFilter
 
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                string keywordDebug = "setup";
-                
-                string[] keywordnew = { "setup", "installer", "install", "installation", "download", "downloader", "set-up" };
-                // experimental and testing stuff START
-                 List<string> allKeywords = new List<string>();
 
-                     foreach (string keys in keywordnew)
-                    {
-                        allKeywords.Add(new string(keywords));
-                    }
-                    // experimental and testing stuff END
-
+                string[] keywordnew = {"Setup", "setup", "Installer", "Install", "install", "Downloader", "downloader"};
+  
                 directory = fbd.SelectedPath;
                 textBox1.Text = directory;
                 var filesEx = Directory.GetFiles(directory, "*.*", SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".exe"));
 
                 foreach (string FilesE in filesEx)
                 {
-                    if (FilesE.Contains(keywordDebug))
+                    foreach(string keyword in keywordnew)
                     {
-                        listView1.Items.Add(FilesE + Environment.NewLine);
+                        if (FilesE.Contains(keyword))
+                        {
+                            listView1.Items.Add(FilesE + Environment.NewLine);
 
-                        // Will add a new button for this.
-                        button2.Visible = true;
-                     
+                            // Will add a new button for this.
+                            button2.Visible = true;
+
+                        }
                     }
+                  
+
                  
                 }
             }
@@ -91,14 +87,7 @@ namespace dFilter
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                File.Move(FilesE, desktopDir + Path.GetFileName(FilesE));
-            }
-            catch (Exception ex)
-            {
-                Debug.Print("Unable to move files. " + ex.Message);
-            }
+         
 
         }
     }
