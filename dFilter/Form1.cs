@@ -31,11 +31,12 @@ namespace dFilter
             if (fbd.ShowDialog() == DialogResult.OK)
             {
 
-                string[] keywordnew = {"Setup", "setup", "Installer", "Install", "install", "Downloader", "downloader"};
+                string[] keywordnew = { "Setup", "setup", "Installer", "installer", "Install", "Downloader", "downloader" };
   
                 directory = fbd.SelectedPath;
                 textBox1.Text = directory;
                 var filesEx = Directory.GetFiles(directory, "*.*", SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".exe"));
+                var filesMs = Directory.GetFiles(directory, "*.*", SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".msi"));
 
                 foreach (string FilesE in filesEx)
                 {
@@ -50,9 +51,21 @@ namespace dFilter
 
                         }
                     }
-                  
+                }
 
-                 
+                foreach (string FilesM in filesMs)
+                {
+                    foreach (string keyword in keywordnew)
+                    {
+                        if (FilesM.Contains(keyword))
+                        {
+                            listView1.Items.Add(FilesM + Environment.NewLine);
+
+                            // Will add a new button for this.
+                            button2.Visible = true;
+
+                        }
+                    }
                 }
             }
         }
