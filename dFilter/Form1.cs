@@ -31,7 +31,7 @@ namespace dFilter
             if (fbd.ShowDialog() == DialogResult.OK)
             {
 
-                string[] keywordnew = { "Setup", "setup", "Installer", "installer", "Install", "Downloader", "downloader" };
+                string[] keywordnew = { "Setup", "setup", "Installer", "Downloader", "downloader", "install" };
   
                 directory = fbd.SelectedPath;
                 textBox1.Text = directory;
@@ -45,10 +45,7 @@ namespace dFilter
                         if (FilesE.Contains(keyword))
                         {
                             listView1.Items.Add(FilesE + Environment.NewLine);
-
-                            // Will add a new button for this.
                             button2.Visible = true;
-
                         }
                     }
                 }
@@ -60,8 +57,6 @@ namespace dFilter
                         if (FilesM.Contains(keyword))
                         {
                             listView1.Items.Add(FilesM + Environment.NewLine);
-
-                            // Will add a new button for this.
                             button2.Visible = true;
 
                         }
@@ -75,11 +70,18 @@ namespace dFilter
         {
             if (Directory.Exists(desktopDir))
             {
-                MessageBox.Show("Unable to create a folder on the desktop since it already exists.");
+                MessageBox.Show("Unable to create a folder on the desktop since it already exists.", "dFilter");
             }
             else
             {
-                Directory.CreateDirectory(desktopDir);
+                try
+                {
+                    Directory.CreateDirectory(desktopDir);
+                }
+                 catch
+                {
+                    MessageBox.Show("Error while creating the directory.", "dFilter");
+                }
             }
 
         }
@@ -93,7 +95,7 @@ namespace dFilter
             }
             catch
             {
-                MessageBox.Show("An error occurred.");
+                MessageBox.Show("An error occurred.", "dFilter");
             }
 
         }
@@ -101,7 +103,7 @@ namespace dFilter
         private void button2_Click(object sender, EventArgs e)
         {
             CreateFileMover();
-            MessageBox.Show("This feature is coming soon in the full release!");
+            MessageBox.Show("This feature is coming soon in the full release!", "dFilter");
 
         }
     }

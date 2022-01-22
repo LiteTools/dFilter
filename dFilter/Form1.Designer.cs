@@ -53,6 +53,7 @@ namespace dFilter
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(300, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 36);
@@ -63,9 +64,10 @@ namespace dFilter
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(12, 73);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 23);
+            this.textBox1.Size = new System.Drawing.Size(282, 25);
             this.textBox1.TabIndex = 2;
             // 
             // openFileDialog1
@@ -74,7 +76,9 @@ namespace dFilter
             // 
             // listView1
             // 
+            this.listView1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listView1.FullRowSelect = true;
+            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 107);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(406, 182);
@@ -85,14 +89,17 @@ namespace dFilter
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(505, 277);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label2.Location = new System.Drawing.Point(504, 275);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.Size = new System.Drawing.Size(41, 17);
             this.label2.TabIndex = 4;
-            this.label2.Text = "v0.1.0";
+            this.label2.Text = "v0.2.0";
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(425, 65);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 36);
@@ -126,6 +133,7 @@ namespace dFilter
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "dFilter";
             this.ResumeLayout(false);
             this.PerformLayout();
