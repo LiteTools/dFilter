@@ -103,8 +103,7 @@ namespace dFilter
         private void button2_Click(object sender, EventArgs e)
         {
             CreateFileMover();
-            MessageBox.Show("This feature is coming soon in the full release!", "dFilter");
-
+            // Need to get the variables from Button1.
         }
     }
 }
