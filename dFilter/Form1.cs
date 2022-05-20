@@ -31,12 +31,11 @@ namespace dFilter
             if (fbd.ShowDialog() == DialogResult.OK)
             {
 
-                string[] keywordnew = { "Setup", "setup", "Installer", "Downloader", "downloader", "install" };
+                string[] keywordnew = { "Setup", "setup", "Installer", "Downloader", "downloader", "install", "set-up" };
   
                 directory = fbd.SelectedPath;
                 textBox1.Text = directory;
                 var filesEx = Directory.GetFiles(directory, "*.*", SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".exe"));
-                var filesMs = Directory.GetFiles(directory, "*.*", SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".msi"));
 
                 foreach (string FilesE in filesEx)
                 {
@@ -49,28 +48,23 @@ namespace dFilter
                         }
                     }
                 }
-
-                foreach (string FilesM in filesMs)
-                {
-                    foreach (string keyword in keywordnew)
-                    {
-                        if (FilesM.Contains(keyword))
-                        {
-                            listView1.Items.Add(FilesM + Environment.NewLine);
-                            button2.Visible = true;
-
-                        }
-                    }
-                }
             }
         }
-        public static string desktopDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\dFilter\\";
         
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CreateFileMover();
+            // Need to get the variables from Button1.
+        }
+        
+        public static string desktopDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\dFilter\\";
         public static void CreateFileMover()
         {
             if (Directory.Exists(desktopDir))
             {
-                MessageBox.Show("Unable to create a folder on the desktop since it already exists.", "dFilter");
+             //   MessageBox.Show("Unable to create the output folder since it already exists.", "dFilter");
             }
             else
             {
@@ -80,7 +74,7 @@ namespace dFilter
                 }
                  catch
                 {
-                    MessageBox.Show("Error while creating the directory.", "dFilter");
+                 //   MessageBox.Show("Error while creating output directory.", "dFilter");
                 }
             }
 
@@ -91,19 +85,13 @@ namespace dFilter
             try
             {
                 Directory.Delete(desktopDir);
-                MessageBox.Show("The files inside of the dFilter output folder have been deleted.", "dFilter");
+                MessageBox.Show("The files inside of the output folder have been deleted.", "dFilter");
             }
             catch
             {
                 MessageBox.Show("An error occurred.", "dFilter");
             }
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            CreateFileMover();
-            // Need to get the variables from Button1.
         }
     }
 }
